@@ -9,6 +9,9 @@ import javax.swing.SwingUtilities;
 
 import edu.princeton.cs.introcs.StdDraw;
 
+import java.awt.Color;
+
+
 /**
  * @author Dennis Cosgrove (http://www.cse.wustl.edu/~cosgroved/)
  */
@@ -19,6 +22,29 @@ public class InterpretDrawingFile {
 		chooser.showOpenDialog(null);
 		File f = new File(chooser.getSelectedFile().getPath());
 		Scanner in = new Scanner(f); //making Scanner with a File
+		String shape=in.next();
+		int red=in.nextInt();
+		int green=in.nextInt();
+		int blue=in.nextInt();
+		boolean a=in.nextBoolean();
+		double x=in.nextDouble();
+		double y=in.nextDouble();
+		double halfWidth=in.nextDouble();
+		double halfHeight=in.nextDouble();
+		Color c=new Color (red,green,blue);
+		if (shape.equals("rectangle")) {
+			if(a=true) {
+			
+			StdDraw.setPenColor(c);
+			//StdDraw.setPenRadius(0.01);
+			StdDraw.filledRectangle(x,y,halfWidth,halfHeight);
+			}
+			}
+			
+				
+			
+			
+		}
 		
 	}
-}
+
